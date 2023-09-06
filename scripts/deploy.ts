@@ -1,27 +1,24 @@
-import { ethers } from "hardhat";
+import { ethers } from 'hardhat';
+import { TokenVesting__factory } from '../typechain/factories/TokenVesting__factory';
+import { parseEthAddress } from '../test/shared/parser';
 
+// This is a script for deploying your contracts. You can adapt it to deploy
+// yours, or create new ones.
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
-
-  const lockedAmount = ethers.parseEther("0.001");
-
-  const lock = await ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
-
-  await lock.waitForDeployment();
-
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
+    // This is just a convenience check
+    const [deployer] = await ethers.getSigners();
+    const tokenAddress = parseEthAddress('TOKEN_ADDRESS');
+    console.log('Network:', (await ethers.provider.getNetwork()).name);
+    console.log('Deploy contracts');
+    const vestingContract = await new TokenVesting__factory(deployer).deploy(
+        tokenAddress
+    );
+    console.log('Vesting contract deployed: ', await vestingContract.address);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
