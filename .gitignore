@@ -13,3 +13,5 @@ abi/
 config.ts
 
 .env
+
+.vscode
