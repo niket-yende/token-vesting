@@ -1,5 +1,5 @@
-import { ethers } from "hardhat";
-import { BigNumber, Wallet } from "ethers";
+import { ethers } from 'hardhat';
+import { BigNumber, Wallet } from 'ethers';
 
 export function assert<T>(property: string, value: T | undefined): T {
     assertDefined(property, value);
@@ -75,5 +75,5 @@ export function parseEthAddress(property: string): string {
 }
 
 export function parseBool(property: string): boolean {
-    return /true/i.test(process.env[property] ?? "");
+    return /true/i.test(process.env[property] ?? '');
 }

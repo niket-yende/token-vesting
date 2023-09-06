@@ -1,5 +1,5 @@
 import { BigNumber } from 'ethers';
-import { ethers, network } from 'hardhat';
+import { ethers } from 'hardhat';
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
