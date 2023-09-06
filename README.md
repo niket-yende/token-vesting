@@ -58,13 +58,21 @@ Solidity smart contracts are found in `./contracts/`
 ## Deploy
 Deploy script can be found in the `deploy.ts` folder.
 
+To get the TOKEN_ADDRESS, deploy TokenWithVaryingDecimals.sol contract first using remix. <br/>
+Reference: [Deploy on mumbai testnet](https://www.youtube.com/watch?v=k-3NR2a4_bw)
+
 Rename `./.env.example` to `./.env` in the project root.
 To add the private key of a deployer account, assign the following variables
 ```
 PRIVATE_KEY=...
 ETHERSCAN_API_KEY=...
 ALCHEMY_API_KEY=...
+TOKEN_ADDRESS=...
 ```
+
+
+
+
 example:
 ```bash
 $ npm run deploy -- mumbai
