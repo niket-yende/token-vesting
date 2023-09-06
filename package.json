@@ -1,0 +1,28 @@
+{
+  "name": "token-vesting",
+  "version": "1.0.0",
+  "description": "token vesting sample app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niket-yende/token-vesting.git"
+  },
+  "keywords": [
+    "erc-20",
+    "solidity",
+    "hardhat",
+    "polygon"
+  ],
+  "author": "Niket Yende (niket6@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niket-yende/token-vesting/issues"
+  },
+  "homepage": "https://github.com/niket-yende/token-vesting#readme",
+  "devDependencies": {
+    "hardhat": "^2.17.2"
+  }
+}
